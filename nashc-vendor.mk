@@ -1116,6 +1116,7 @@ PRODUCT_PACKAGES += \
     liboplus.aishutter \
     liboplus_mtkcam_lightsensorprovider \
     liboppo_arcSoftBokehEngine \
+    libpn557_fw \
     libpq_cust_base \
     libpqframework \
     libpqparamparser \
@@ -1242,7 +1243,6 @@ PRODUCT_PACKAGES += \
     libormshalclient \
     libosenseaidlhalclient \
     libosensehalclient \
-    libpn557_fw \
     vendor.oplus.hardware.appradio@1.0 \
     vendor.oplus.hardware.charger@1.0 \
     vendor.oplus.hardware.commondcs@1.0 \
