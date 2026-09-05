@@ -1206,7 +1206,6 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.pq@2.9 \
     vendor.oplus.hardware.cameraextension@1.0 \
     vendor.oplus.hardware.cammidasservice@1.0 \
-    vendor.oplus.hardware.performance-V1-ndk_platform \
     vendor.oplus.hardware.radio-V1-ndk_platform \
     libcomutils \
     libimsma \
