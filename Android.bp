@@ -2676,6 +2676,33 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libaudiopreprocessing_mtk",
+    owner: "realme",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/soundfx/libaudiopreprocessing_mtk.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    relative_install_path: "soundfx",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.mediatek.hardware.audio@7.1",
     owner: "realme",
     strip: {
@@ -16545,7 +16572,7 @@ cc_prebuilt_library_shared {
                 "libcodec2_vpp_qt_plugin",
                 "libcodec2_vpp_rs_plugin",
                 "libbinder_ndk",
-                "vendor.oplus.hardware.performance-V1-ndk_platform",
+                "vendor.oplus.hardware.performance-V1-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -16594,7 +16621,7 @@ cc_prebuilt_library_shared {
                 "libion_mtk",
                 "libcodec2_mtk_c2store",
                 "libbinder_ndk",
-                "vendor.oplus.hardware.performance-V1-ndk_platform",
+                "vendor.oplus.hardware.performance-V1-ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -24388,7 +24415,6 @@ cc_prebuilt_library_shared {
     prefer: true,
     soc_specific: true,
 }
-
 
 cc_prebuilt_library_shared {
     name: "vendor.oplus.hardware.radio-V1-ndk_platform",
