@@ -20394,17 +20394,34 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-cc_prebuilt_library_shared {
+soong_config_module_type {
+    name: "nashc_camera_prebuilt",
+    module_type: "cc_prebuilt_library_shared",
+    config_namespace: "nashc_camera",
+    bool_variables: ["use_oplus"],
+    properties: ["srcs"],
+}
+
+nashc_camera_prebuilt {
     name: "libmtkcam_pipelinemodel_session",
     owner: "realme",
+    soong_config_variables: {
+        use_oplus: {
+            srcs: [
+                "proprietary/vendor/lib64/libmtkcam_pipelinemodel_session.so",
+            ],
+            conditions_default: {
+                srcs: [
+                    "proprietary/vendor/lib64/libmtkcam_pipelinemodel_session_stock.so",
+                ],
+            },
+        },
+    },
     strip: {
         none: true,
     },
     target: {
         android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libmtkcam_pipelinemodel_session.so",
-            ],
             shared_libs: [
                 "vendor.oplus.hardware.cammidasservice@1.0",
                 "libmidasserviceintf",
